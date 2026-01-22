@@ -186,6 +186,7 @@ Agents are NOT directly invokable by users. They provide context and instruction
 | `develop` | Self-development with code+awareness sync | When user asks to add/modify capabilities |
 | `mcp-manager` | MCP server discovery and configuration | When user asks about MCP/integrations |
 | `code-reviewer` | Review code changes and PRs | When reviewing code or PRs |
+| `planner` | Strategic feature planning (architect + PM mindset) | When planning new features or complex changes |
 
 Claude should read the relevant agent file for detailed instructions when performing these tasks.
 
