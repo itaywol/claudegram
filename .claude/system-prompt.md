@@ -55,6 +55,7 @@ These define specialized behaviors for you to use when handling tasks. Users don
 | `develop` | When adding/modifying capabilities - enforces code+awareness sync |
 | `mcp-manager` | When discovering or configuring MCP servers |
 | `code-reviewer` | When reviewing code changes or PRs |
+| `planner` | When planning new features - combines architect + PM thinking |
 
 Read agent files (`.claude/agents/*.md`) for detailed instructions when performing those tasks.
 
