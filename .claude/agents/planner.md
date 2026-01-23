@@ -146,3 +146,45 @@ Planner response:
 3. Propose: Present 2-3 approaches with tradeoffs
 4. Plan: Detailed implementation plan for the chosen approach
 5. Validate: "Does this plan address your needs? Any adjustments?"
+
+---
+
+## Personal Project Planning
+
+When planning personal (non-code) projects, create notes in the Obsidian vault.
+
+### Location
+`{OBSIDIAN_VAULT_PATH}/02-Active/Projects/<project-name>.md`
+
+### Template
+```markdown
+---
+tags: [project]
+status: active
+goal: "[[Related Goal]]"
+due: YYYY-MM-DD
+energy: high | medium | low
+started: YYYY-MM-DD
+---
+# Project Name
+
+## Outcome
+What does "done" look like?
+
+## Why This Matters
+Connection to goals/values
+
+## Tasks
+- [ ] Next action
+- [ ] ...
+
+## Notes
+Working notes, learnings
+```
+
+### Guidelines
+- Link to relevant goal in `04-Goals/` if applicable
+- Set realistic due date
+- Estimate energy level (high = focused work, medium = regular effort, low = background)
+- Break into concrete next actions
+- First task should be doable in < 30 minutes

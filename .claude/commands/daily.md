@@ -1,35 +1,66 @@
 ---
-description: View or create today's daily note
-argument-hint: [section to focus on]
+description: View or interact with today's daily note
+argument-hint: [section|add <task>]
 ---
 
 # Daily Note Skill
 
-Access and interact with today's Obsidian daily note.
+Access today's daily note in the Obsidian vault.
 
 ## Usage
 
 ```
-/daily              - Show today's daily note
-/daily tasks        - Show just the tasks section
-/daily add task     - Add a task to today's note
+/daily              - Show today's full daily note
+/daily focus        - Show Today's Focus section
+/daily log          - Show Log section
+/daily add <task>   - Add task to Today's Focus
 ```
-
-## Behavior
-
-1. Locate today's daily note in Obsidian vault
-2. If no argument: display full note content
-3. If section specified: extract and show that section
-4. For "add" commands: append to appropriate section
 
 ## Daily Note Location
 
-Daily notes are in: `{OBSIDIAN_VAULT_PATH}/daily/YYYY-MM-DD.md`
+Daily notes are in: `{OBSIDIAN_VAULT_PATH}/05-Daily/YYYY/YYYY-MM-DD.md`
+
+Example: `05-Daily/2026/2026-01-23.md`
 
 ## Sections
 
-Common sections to query:
-- `tasks` - Task list / todos
-- `notes` - General notes
-- `journal` - Journal entries
-- `schedule` - Day's schedule
+| Section | Purpose |
+|---------|---------|
+| `focus` | Today's Focus - the #1 priority task(s) |
+| `log` | Log section for notes throughout the day |
+
+## Behavior
+
+1. Calculate today's date in YYYY-MM-DD format
+2. Construct path: `05-Daily/{YYYY}/{YYYY-MM-DD}.md`
+3. If no argument: display full note content
+4. If section specified: extract and show that section
+5. For `add <task>`: append `- [ ] <task>` to Today's Focus section
+
+## Template Structure
+
+```markdown
+---
+tags: [daily]
+date: YYYY-MM-DD
+energy:
+---
+# YYYY-MM-DD, Day
+
+## Today's Focus
+- [ ] #1 priority
+
+## Log
+
+
+---
+<< [[YYYY-MM-DD]] | [[YYYY-MM-DD]] >>
+```
+
+## Properties
+
+| Property | Type | Purpose |
+|----------|------|---------|
+| tags | list | Always `[daily]` |
+| date | date | The note's date |
+| energy | text | Optional: high, medium, low |
