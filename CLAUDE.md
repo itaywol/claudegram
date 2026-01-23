@@ -172,9 +172,14 @@ Users can directly invoke these via `/command` in Telegram:
 
 | Command | Description | Handler |
 |---------|-------------|---------|
-| `/note` | Quick capture to Obsidian inbox | Native (`src/telegram/handlers/notes.ts`) |
+| `/note` | Quick capture to Obsidian inbox (`01-Inbox/`) | Native |
+| `/capture` | Smart capture with auto-type detection | Claude |
 | `/schedule` | Schedule events from notes or natural language | Claude + Google Calendar MCP |
-| `/daily` | View or interact with today's daily note | Claude |
+| `/daily` | View or interact with today's daily note (`05-Daily/YYYY/`) | Claude |
+| `/inbox` | View inbox dashboard and process items | Claude |
+| `/projects` | List and manage active projects | Claude |
+| `/areas` | View life areas (Work, Health, Home, Relationship) | Claude |
+| `/review` | Start daily review workflow | Claude |
 | `/search` | Search across vault and codebase | Claude |
 
 ### Agents (`.claude/agents/`) - Claude's Context
@@ -183,6 +188,7 @@ Agents are NOT directly invokable by users. They provide context and instruction
 
 | Agent | Purpose | When Claude uses it |
 |-------|---------|---------------------|
+| `life-assistant` | Personal productivity workflows | When managing vault, reviews, inbox processing |
 | `develop` | Self-development with code+awareness sync | When user asks to add/modify capabilities |
 | `mcp-manager` | MCP server discovery and configuration | When user asks about MCP/integrations |
 | `code-reviewer` | Review code changes and PRs | When reviewing code or PRs |
